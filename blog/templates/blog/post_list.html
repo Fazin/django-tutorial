@@ -1,0 +1,18 @@
+{% extends "blog/base.html" %}
+<!-- herdar o formato da estrutura base.html -->
+{% block title %}Meu blog Django/Python{% endblock %}
+<!-- definir o title -->
+
+{% block content %}
+<!-- preencher o main -->
+    {% for post in post_list %}
+    <!-- varrer cada item do post -->
+        <article>
+            <h2>{{ post.title }}</h2>
+            <p class="date">
+                Publicado em: {{ post.created }} By {{ post.author }}
+            </p>
+            {{ post.body|linebreaks|truncatewords:10 }}
+        </article>
+    {% endfor %}
+{% endblock %}

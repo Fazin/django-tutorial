@@ -9,5 +9,5 @@ app_name = 'blog' ##variavel importante para referenciar as urls desse arquivo
 
 urlpatterns = [
     path("", views.PostListView.as_view(), name="list"),
-    path("<slug:slug>/", views.PostListView.as_view(), name="detail"),
+    path("<slug:slug>/", views.PostDetailView.as_view(), name="detail"),
 ]  ## lista de padroes de url, url sem argumentos vai na lista de post, com slug vai para pagina de um post
