@@ -11,6 +11,9 @@ class Post(models.Model):
     created = models.DateTimeField(auto_now_add=True) #data de cruacao adicionada auto
     updated = models.DateTimeField(auto_now=True) #data da ultima modificacao automaticamente
 
+    class Meta:
+        ordering = ('-created',)
+    
     def __str__(self):
         return self.title
 
